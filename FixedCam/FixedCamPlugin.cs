@@ -32,10 +32,10 @@ namespace Example
         {
             public static void Postfix()
             {
-                if (fixedOn && Camera.main.transform.parent != PlayerControl.LocalPlayer.transform)                
+                if (fixedOn)                
                         Camera.main.transform.SetParent(PlayerControl.LocalPlayer.transform);
                 
-                else if (Camera.main.transform.parent != null)              
+                else             
                         Camera.main.transform.SetParent(null);
             }
         }
