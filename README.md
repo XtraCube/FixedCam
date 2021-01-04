@@ -9,7 +9,7 @@ F5 - Toggle status viewer under ping
 F6 - Toggle Fixed Camera
 
 ## Installation
-1. Download the `.zip` from releases that matches your game version.
+1. Download the `.zip` from the releases on the right that matches your game version.
 2. Copy the `.zip` file into your Among Us folder, which can be found by going to your Steam Library, right clicking Among Us, hovering over Manage, then clicking `Browse local files`.
 
 ![Among Us Directory](https://media.discordapp.net/attachments/793980005880692767/794281917348446218/unknown.png)
