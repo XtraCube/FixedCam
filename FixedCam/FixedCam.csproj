@@ -5,7 +5,7 @@
         <GameVersion>2020.12.9s</GameVersion>
         <Mappings>NuclearPowered/Mappings:0.1.0-alpha.1</Mappings>
 
-        <Description>Smooth Camera Mod for Among Us</Description>
+        <Description>Fixed Camera Mod for Among Us</Description>
         <Authors>js6pak</Authors>
     </PropertyGroup>
 

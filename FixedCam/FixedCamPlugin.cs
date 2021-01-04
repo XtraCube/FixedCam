@@ -11,10 +11,10 @@ namespace Example
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
-    public class SmoothCamPlugin : BasePlugin
+    public class FixedCamPlugin : BasePlugin
     {
-        public const string Id = "com.xtracube.smoothcam";
-        public static bool smoothEnabled = true;
+        public const string Id = "com.xtracube.fixedcam";
+        public static bool fixedOn = true;
         public static bool showPing = true;
         public Harmony Harmony { get; } = new Harmony(Id);
 
@@ -28,7 +28,7 @@ namespace Example
         {
             public static void Postfix()
             {
-                if (smoothEnabled)
+                if (fixedOn)
                 {
                     if (Camera.main.transform.parent != PlayerControl.LocalPlayer.transform)
                         Camera.main.transform.SetParent(PlayerControl.LocalPlayer.transform);
@@ -50,7 +50,7 @@ namespace Example
                     showPing = !showPing;
 
                 if (Input.GetKeyDown(KeyCode.F6))
-                    smoothEnabled = !smoothEnabled;
+                    fixedOn = !fixedOn;
             }
         }
                 
@@ -62,13 +62,15 @@ namespace Example
                 __instance.text.Centered = true;
                 if (showPing)
                 {
-                    if (smoothEnabled)
-                        __instance.text.Text += "\nSmoothCam: [00FF00FF]Enabled[]";
+                    if (fixedOn)
+                        __instance.text.Text += "\nFixedCam: [00FF00FF]Enabled[]";
                     else
-                        __instance.text.Text += "\nSmoothCam: [FF0000FF]Disabled[]";
+                        __instance.text.Text += "\nFixedCam: [FF0000FF]Disabled[]";
                 }
             }
         }
+
+
 
 
     }
