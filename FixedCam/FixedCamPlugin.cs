@@ -11,6 +11,7 @@ namespace Example
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
+    [ReactorPluginSide(PluginSide.Client)]
     public class FixedCamPlugin : BasePlugin
     {
         // Define variables
