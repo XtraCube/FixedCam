@@ -30,12 +30,17 @@ namespace Example
         [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
         public static class PlayerControlFixedUpdatePatch
         {
-            public static void Postfix()
+            public static void Postfix(PlayerControl __instance)
             {
-                if (fixedOn)                
-                        Camera.main.transform.SetParent(PlayerControl.LocalPlayer.transform);                
-                else             
-                        Camera.main.transform.SetParent(null);
+                if (fixedOn && __instance.CanMove)
+                {
+                    Camera.main.transform.SetParent(PlayerControl.LocalPlayer.transform);
+                }
+                else
+                {
+                    Camera.main.transform.SetParent(null);
+                }
+
             }
         }
         
