@@ -3,6 +3,10 @@ Adds an option for fixed camera on the player
 
 [Among Us Fixed Cam Example](https://imgpile.com/images/75hmQM.gif)
 
+## Controls
+F5 - Toggle status viewer under ping
+
+F6 - Toggle Fixed Camera
 
 ## Installation
 1. Download the `.zip` from releases that matches your game version.
