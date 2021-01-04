@@ -1,2 +1,2 @@
-# SmoothCam
-Adds an option for smooth camera
+# Fixed Cam
+Adds an option for fixed camera on the player
