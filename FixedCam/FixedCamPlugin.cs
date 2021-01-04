@@ -13,34 +13,33 @@ namespace Example
     [BepInDependency(ReactorPlugin.Id)]
     public class FixedCamPlugin : BasePlugin
     {
+        // Define variables
         public const string Id = "com.xtracube.fixedcam";
         public static bool fixedOn = true;
         public static bool showPing = true;
         public Harmony Harmony { get; } = new Harmony(Id);
 
+        // Patch all methods
         public override void Load()
         {
             Harmony.PatchAll();
         }
 
+        // Set the camera's parent to enable fixed mode
         [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
         public static class PlayerControlFixedUpdatePatch
         {
             public static void Postfix()
             {
-                if (fixedOn)
-                {
-                    if (Camera.main.transform.parent != PlayerControl.LocalPlayer.transform)
+                if (fixedOn && Camera.main.transform.parent != PlayerControl.LocalPlayer.transform)                
                         Camera.main.transform.SetParent(PlayerControl.LocalPlayer.transform);
-                }
-                else
-                {
-                    if (Camera.main.transform.parent != null)
+                
+                else if (Camera.main.transform.parent != null)              
                         Camera.main.transform.SetParent(null);
-                }
             }
         }
         
+        // Detect key presses for toggling fixed cam
         [HarmonyPatch(typeof(KeyboardJoystick), nameof(KeyboardJoystick.Update))]
         public static class KeyboardJoystickUpdatePatchPatch
         {
@@ -53,7 +52,8 @@ namespace Example
                     fixedOn = !fixedOn;
             }
         }
-                
+        
+        // Show status of camera under the ping
         [HarmonyPatch(typeof(PingTracker), nameof(PingTracker.Update))]
         public static class PingTrackerUpdatePatch
         {
