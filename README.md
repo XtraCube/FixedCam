@@ -1,5 +1,5 @@
 # Fixed Cam
-Adds an option for fixed camera on the player
+Adds an option for fixed camera on the player. Thanks to Pure#3599 for requesting the idea
 
 [Among Us Fixed Cam Example](https://imgpile.com/images/75hmQM.gif)
 
