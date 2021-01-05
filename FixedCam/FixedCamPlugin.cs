@@ -26,7 +26,7 @@ namespace Example
             Harmony.PatchAll();
         }
 
-        // Set the camera's parent to enable fixed mode
+        // Set the camera's parent to enable or disable fixed mode
         [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
         public static class PlayerControlFixedUpdatePatch
         {
@@ -44,21 +44,21 @@ namespace Example
             }
         }
         
-        // Detect key presses for toggling fixed cam
+        // Detect key presses for toggling variables
         [HarmonyPatch(typeof(KeyboardJoystick), nameof(KeyboardJoystick.Update))]
         public static class KeyboardJoystickUpdatePatchPatch
         {
             public static void Postfix()
             {
-                if (Input.GetKeyDown(KeyCode.F5))
+                if (Input.GetKeyDown(KeyCode.F5))// Enable/disable status of cam under ping tracker
                     showPing = !showPing;
 
-                if (Input.GetKeyDown(KeyCode.F6))
+                if (Input.GetKeyDown(KeyCode.F6))// Enable/disable fixed camera
                     fixedOn = !fixedOn;
             }
         }
         
-        // Show status of camera under the ping
+        // Show status of camera under the ping tracker
         [HarmonyPatch(typeof(PingTracker), nameof(PingTracker.Update))]
         public static class PingTrackerUpdatePatch
         {
