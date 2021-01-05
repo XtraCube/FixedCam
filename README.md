@@ -1,6 +1,8 @@
 # Fixed Cam
 Adds an option for fixed camera on the player. Thanks to Pure#3599 for requesting the idea
 
+Join my Discord [here](https://discord.gg/GFFyEjeYxr)
+
 [Among Us Fixed Cam Example](https://imgpile.com/images/75hmQM.gif)
 
 ## Controls
