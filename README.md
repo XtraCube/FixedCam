@@ -1,5 +1,5 @@
 # Fixed Cam
-Adds an option for fixed camera on the player. Thanks to Pure#3599 for requesting the idea
+Adds an option for fixed camera on the player. Thanks to Chadure#3599 for requesting the idea
 
 Join my Discord [here](https://discord.gg/GFFyEjeYxr)
 
